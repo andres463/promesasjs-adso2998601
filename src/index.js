@@ -1,11 +1,11 @@
 
 // Funcion para simular la descarga de un archivo, utilizando promesas
 
-function descargarArchivo(){
+function nuevapromesa(){
     return new Promise((resolve) => {
         setTimeout(() =>{
-            resolve("📁 Archivo descargado con exito.... ")
-        }, 5000)
+            resolve("◀  promesa retornada con éxito después de 8 segundos ")
+        }, 8000)
     })
 }
 
@@ -17,12 +17,12 @@ function descargarArchivo(){
 
 async function ejecutar(){
     try {
-        console.log("⌛Descarga en proceso...")
-        const respuesta = await descargarArchivo()
+        console.log("⌛Retorno en proceso...")
+        const respuesta = await nuevapromesa()
         console.log(respuesta)
 
     } catch (error) {
-        console.error("❌ Error al descargar", error)
+        console.error("❌ Error al retornar la promesa", error)
 
     }
 }
