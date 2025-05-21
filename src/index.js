@@ -1,20 +1,18 @@
-// Funcion para simular la descarga de un archivo, utilizando promesas
 
-function promesa2(){
-   const error = false;
+
+function numeroAleatorio() {
     return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (error) {
-        reject("❌ Ocurrió un error al descargar")
-      } else {
-        resolve("✅ Promesa exitosa en 8 segundos")
-      }
-    }, 8000) 
-  })
+        const numero = Math.random();
+
+        if (numero < 0.5) {
+            resolve("❌ El numero es menor que 0.5  "  +  numero)
+        }else {
+            reject("✅ El numero  fue procesado con exito  " +  numero)
+        }
+    })
 }
 
-
-promesa2()
+numeroAleatorio()
 .then((resultado) => {
     console.log(resultado);
 })
